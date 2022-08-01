@@ -1,4 +1,3 @@
-console.log(import.meta.env.VITE_API_KEY)
 
 const basicFetch = async (endpoint) => {
     const request = await fetch(`${import.meta.env.VITE_BASE_URL}${endpoint}${import.meta.env.VITE_API_KEY}`)
@@ -6,8 +5,7 @@ const basicFetch = async (endpoint) => {
     return json
 }
 
-export default {
-    getHomeList: async () => {
+export async function getHomeList () {
         return [
             {
                 slug: 'originals',
@@ -51,4 +49,3 @@ export default {
             },
         ]
     }
-}
