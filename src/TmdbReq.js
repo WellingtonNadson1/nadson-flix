@@ -49,3 +49,23 @@ export async function getHomeList () {
             },
         ]
     }
+
+export async function getInfoMovie (movieID, type) {
+    let infoMovie = {}
+
+    if(movieID) {
+        switch (type) {
+            case 'movie':
+                infoMovie = await basicFetch(`/movie/${movieID}?language=pt-BR&api_key=`);
+                break;
+    
+            case 'tv':
+                infoMovie = await basicFetch(`/tv/${movieID}?language=pt-BR&api_key=`);
+                break;
+        
+            default:
+                break;
+        }
+    }
+    return infoMovie
+}

@@ -1,4 +1,4 @@
-import './MovieRow.css'
+import './styles.css'
 
 export default function MovieRow ({title, items}) {
   return (
