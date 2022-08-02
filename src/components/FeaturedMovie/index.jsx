@@ -1,4 +1,5 @@
 import './styles.css'
+import { Play } from 'phosphor-react';
 
 export function FeaturedMovie({item}) {
 
@@ -37,7 +38,7 @@ export function FeaturedMovie({item}) {
                         {description}
                     </div>
                     <div className="featured--buttom">
-                        <a className='featured--watch' href={`watch/${item.id}`}>Assisitir</a>
+                        <a className='featured--watch' href={`watch/${item.id}`}><Play color="#000" weight="fill" size={20} /> Assisitir</a>
                         <a className='featured--myList' href={`list/add/${item.id}`}>+ Minha Lista</a>
                     </div>
                     <div className="featured-genres"><strong>Gêneros:</strong> {genres.join(', ')}</div>
