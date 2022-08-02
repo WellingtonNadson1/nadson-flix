@@ -9,6 +9,12 @@ export function FeaturedMovie({item}) {
         genres.push(item.genres[i].name)
     }
 
+    // Modificando a descrição por ter muitos caracteres
+    let description = item.overview;
+    if (description.length > 200) {
+        description = description.substring(0, 200)+'...';
+    }
+
     return (
         <section 
             className="featured" 
@@ -28,7 +34,7 @@ export function FeaturedMovie({item}) {
                         <div className='featured--seasons'>{item.number_of_seasons} temporada{item.number_of_seasons !==1 ? 's' : ''}</div>
                     </div>
                     <div className="featured--description">
-                        {item.overview}
+                        {description}
                     </div>
                     <div className="featured--buttom">
                         <a className='featured--watch' href={`watch/${item.id}`}>Assisitir</a>
