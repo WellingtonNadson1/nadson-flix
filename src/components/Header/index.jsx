@@ -1,8 +1,8 @@
 import './styles.css'
 
-export function Header() {
+export function Header({black}) {
     return (
-        <header className="header black">
+        <header className={`header ${black ? 'black' : ''}`}>
             <div className="logo">
                 <h2>NADSONFLIX</h2>
             </div>

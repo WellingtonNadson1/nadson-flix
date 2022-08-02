@@ -4,10 +4,13 @@ import MovieRow from './components/MovieRow'
 import {getHomeList, getInfoMovie} from './TmdbReq'
 import './App.css'
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { Loading } from './components/Loading';
 
 export default function App() {
-  const [movieList, setMovieList] = useState([])
-  const [fetchData, setFetchData] = useState(null)
+  const [movieList, setMovieList] = useState([]);
+  const [fetchData, setFetchData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     // Pegando a Lista de Filmes
@@ -30,10 +33,27 @@ export default function App() {
 
   }, []);
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+
+  }, [])
+
   return (
     <div className="page">
 
-      <Header />
+      <Header black={blackHeader}/>
       
       {fetchData && 
         <FeaturedMovie item={fetchData}/>
@@ -44,6 +64,12 @@ export default function App() {
             <MovieRow title={item.title} items={item.items} key={key}/>
           )}
       </section>
+
+      {movieList.length <= 0 && 
+        <Loading />
+      }
+
+      <Footer />
     </div>
   )
 }
