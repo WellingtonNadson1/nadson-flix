@@ -46,7 +46,7 @@ a{
     font-size: 1.25rem;
     color: #999;
     margin-bottom: 1rem;
-    max-width: 40%;
+    max-width: 44%;
 }
 
 .featured--buttom{
@@ -83,4 +83,42 @@ a{
     font-size: 1.25rem;
     color: #999;
     padding-bottom: 8.5rem;
+}
+
+@media (max-width: 768px) {
+    .featured{
+        height: 90vh;
+    }
+
+    .featured--name{
+        font-size: 2.45rem;
+    }
+
+    .featured--info{
+        font-size: 1rem;
+    }
+
+    .featured--description{
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .featured--watch, .featured--myList{
+        font-size: 1rem;
+        padding: 0.8rem 1.4625rem;
+    }
+
+    .featured-genres{
+        font-size: 1rem;
+        padding-bottom: 12.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .featured{
+        min-width: 478px
+    }
+    .featured-genres{
+        padding-bottom: 14.5rem;
+    }
 }

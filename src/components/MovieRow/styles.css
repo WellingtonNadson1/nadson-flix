@@ -64,3 +64,9 @@
     right: 0;
 }
 
+@media (max-width: 768px) {
+    .movieRow--left,
+    .movieRow--right{
+        opacity: 1;
+    }
+}
