@@ -7,7 +7,7 @@ export function Header({black}) {
                 <h2>NADSONFLIX</h2>
             </div>
             <div className="logo-user">
-                <img src="src/assets/logoUser.svg" alt="Logo User" />
+                <img src="/images/logoUser.svg" alt="Logo User" />
             </div>
 
         </header>
