@@ -23,7 +23,7 @@ export default function App() {
       let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length -1))
       let chosen = originals[0].items.results[randomChosen]
       
-      let chosenInfoMovie = await getInfoMovie(chosen.id, 'tv')
+      let chosenInfoMovie = await getInfoMovie(chosen.id, 'movie')
       setFetchData(chosenInfoMovie)
     }
     

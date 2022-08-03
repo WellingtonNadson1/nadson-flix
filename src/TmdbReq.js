@@ -10,7 +10,7 @@ export async function getHomeList () {
             {
                 slug: 'originals',
                 title: 'Originais NadsonFlix',
-                items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=`)
+                items: await basicFetch(`/discover/movie?with_networks=213&language=pt-BR&api_key=`)
             },
             {
                 slug: 'trending',
