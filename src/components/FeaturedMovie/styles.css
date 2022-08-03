@@ -23,7 +23,7 @@ a{
 }
 
 .featured--name{
-    padding-top: 4.375rem;
+    padding-top: 4.379rem;
     font-size: 3.75rem;
     font-weight: bold;
 }
@@ -46,7 +46,7 @@ a{
     font-size: 1.25rem;
     color: #999;
     margin-bottom: 1rem;
-    max-width: 44%;
+    max-width: 45%;
 }
 
 .featured--buttom{
@@ -60,7 +60,7 @@ a{
     justify-content: center;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.9rem 1.5rem;
+    padding: 0.95rem 1.5rem;
     font-size: 1.25rem;
     font-weight: bold;
     border-radius: 0.3125rem;
@@ -69,7 +69,7 @@ a{
 }
 
 .featured--watch:hover, .featured--myList:hover{
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .featured--watch{

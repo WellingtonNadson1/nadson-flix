@@ -35,7 +35,7 @@ export default function App() {
 
   useEffect(() => {
     const scrollListener = () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 0) {
         setBlackHeader(true);
       } else {
         setBlackHeader(false);
