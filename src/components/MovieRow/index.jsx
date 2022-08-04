@@ -29,7 +29,9 @@ export default function MovieRow ({title, items}) {
       <h2>
         {title}
       </h2>
-      <div className="movieRow--left" onClick={handleArrowLeft}>
+      <div className="movieRow--left" onClick={handleArrowLeft} 
+        style={{display: scrollX === 0 ? 'none' : 'flex'}}
+      >
         <CaretLeft color="#f8f8f8" size={32} />
       </div>
       <div className="movieRow--right" onClick={handleArrowRight}>
