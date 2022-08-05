@@ -65,6 +65,11 @@ export default function App() {
           )}
       </section>
 
+      {/* Modal */}
+      <section className='modal'>
+        {/* <ModalTrailer /> */}
+      </section>
+
       {movieList.length <= 0 && 
         <Loading />
       }
