@@ -1,9 +1,13 @@
 import './styles.css'
 import { Play, Plus } from 'phosphor-react';
+import { useRecoilState } from 'recoil';
+import { modalState, movieState } from '../../../atoms/modalAtom';
 
 export function FeaturedMovie({item}) {
 console.log(item)
     const firstData = new Date(item.release_date)
+    const [showModal, setShowModal] = useRecoilState(modalState)
+    const [currentMovie, setCurrentMovie] = useRecoilState(movieState)
 
     const genres = []
     for (let i in item.genres){
@@ -40,8 +44,11 @@ console.log(item)
                     <div className="featured--buttom">
                         <a className='featured--watch' href={`watch/${item.id}`}>
                             <Play color="#000" weight="fill" size={20} /> Assisitir</a>
-                        <a className='featured--myList' href={`list/add/${item.id}`}>
-                            <Plus color="#ffffff" weight="bold" size={20} /> Minha Lista</a>
+                        <a className='featured--myList' onClick={() => {
+                            setCurrentMovie(currentMovie)
+                            setShowModal(true)
+                        }}>
+                            <Plus color="#ffffff" weight="bold" size={20} /> Mais inform.</a>
                     </div>
                     <div className="featured-genres"><strong>Gêneros:</strong> {genres.join(', ')}</div>
                 </div>

@@ -6,11 +6,15 @@ import './App.css'
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Loading } from './components/Loading';
+import { useRecoilValue } from 'recoil';
+import { modalState } from '../atoms/modalAtom';
+import { Modal } from './components/Modal';
 
 export default function App() {
   const [movieList, setMovieList] = useState([]);
   const [fetchData, setFetchData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
+  const showModal = useRecoilValue(modalState);
 
   useEffect(() => {
     // Pegando a Lista de Filmes
@@ -28,8 +32,6 @@ export default function App() {
     }
     
     loadAll()
-
-
 
   }, []);
 
@@ -67,7 +69,7 @@ export default function App() {
 
       {/* Modal */}
       <section className='modal'>
-        {/* <ModalTrailer /> */}
+        {showModal && <Modal /> }
       </section>
 
       {movieList.length <= 0 && 
